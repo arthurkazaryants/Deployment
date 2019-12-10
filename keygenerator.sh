@@ -19,12 +19,14 @@ echo "Generating new tokens"
 NEW_KEY=$(openssl rand -hex 32)
 NEW_IV=$(openssl rand -hex 16)
 
-echo "SSH Key name: $KEYNAME
-KEY: $NEW_KEY
-IV: $NEW_IV" > credentials.txt
+VAR_NAME=$(openssl rand -hex 8)
 
-echo "KEY: $NEW_KEY"
-echo "IV: $NEW_IV"
+echo "SSH Key name: $KEYNAME
+encrypted_"$VAR_NAME"_key: $NEW_KEY
+encrypted_"$VAR_NAME"_iv: $NEW_IV" > credentials.txt
+
+echo "encrypted_"$VAR_NAME"_key: $NEW_KEY"
+echo "encrypted_"$VAR_NAME"_iv: $NEW_IV"
 echo "KEY and IV saved into credentials.txt"
 
 echo "Encrypting private key zip file"
