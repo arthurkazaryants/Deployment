@@ -26,9 +26,8 @@
 
 Для успешной работы конфига нужно добавить в настройки CircleCI необходимые Enviroment Variables:
 
-– *notification_discord_webhook* – вебхук канала оповещений Discord
-
-– *notification_success_message*, *notification_fail_message* – текстовые сообщения успешной и проваленой сборки
+* **notification_discord_webhook** – вебхук канала оповещений Discord
+* **notification_success_message**, **notification_fail_message** – текстовые сообщения успешной и проваленой сборки
 
 
 ---
