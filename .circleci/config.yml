@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
+
+    steps:
+      - checkout
+
+########################
+## Notifications section
+#
+# Env vars from circleci:
+# $notification_discord_webhook
+# $notification_success_message
+# $notification_fail_message
+#
+########################
+      - run:
+          name: Upload Success Tests
+          command:  |
+            echo "Sending message to discord"
+
+            if [[ -z "$notification_success_message" ]]; then
+                echo "Not found configured env, so nothing to send"
+            else
+                curl -H "Content-Type: application/json" -X POST -d "{\"content\":\"$notification_success_message\"}" "$notification_discord_webhook"
+            fi
+          when: on_success
+
+      - run:
+          name: Upload Failed Tests
+          command:  |
+            echo "Sending message to discord"
+            if [[ -z "$notification_fail_message" ]]; then
+                echo "Not found configured env, so nothing to send"
+            else
+                curl -H "Content-Type: application/json" -X POST -d "{\"content\":\"$notification_fail_message\"}" "$notification_discord_webhook"
+            fi
+          when: on_fail
+########################
