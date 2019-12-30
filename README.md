@@ -18,5 +18,19 @@
 Скрипт создает пустую базу с указанным названием, нового пользователя с уровнем *ALL PRIVILEGES* к этой базе.
 После генерации выведет в консоль имя новой базы, имя нового пользователя и его пароль.
 
+## Включение нотификаций из CircleCI в Discord
+
+В файл конфигурации для CircleCI внесена отправка кастомных уведомлений в Discord:
+
+**.circleci/config.yml**
+
+Для успешной работы конфига нужно добавить в настройки CircleCI необходимые Enviroment Variables:
+
+– notification_discord_webhook – вебхук канала оповещений Discord
+
+– notification_success_message, notification_fail_message – Текстовые сообщения успешной и проваленой сборки
+
+
+---
 
 To be continue..
