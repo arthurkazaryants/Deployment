@@ -19,7 +19,7 @@ echo "Creating new database and user"
 if [ -f /root/.my.cnf ]; then
     mysql -e "CREATE DATABASE ${DBNAME} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
     mysql -e "CREATE USER ${DBUSER}@localhost IDENTIFIED BY '${DBUSERPASS}';"
-    mysql -e "GRANT ALL PRIVILEGES ON ${DBUSER}.* TO '${DBNAME}'@'localhost';"
+    mysql -e "GRANT ALL PRIVILEGES ON ${DBNAME}.* TO '${DBUSER}'@'localhost';"
     mysql -e "FLUSH PRIVILEGES;"
 
 # If /root/.my.cnf doesn't exist then it'll ask for root password
