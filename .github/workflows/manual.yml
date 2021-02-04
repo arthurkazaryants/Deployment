@@ -1,13 +1,12 @@
-name: Manual mirroring to GitLab
+name: Manual pushing to GitLab
 
 on: workflow_dispatch
 
 jobs:
-  to_gitlab:
+  push_to_gitlab:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
-    #- uses: ./.github/actions/repo-sync-action
     - uses: arthurkazaryants/action-sync-repos@v1
       with:
         target_repo_url:
