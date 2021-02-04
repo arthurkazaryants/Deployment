@@ -1,8 +1,8 @@
 name: "Mirroring Repository"
 description: "Mirror a repository to another repository on GitHub, GitLab, BitBucket, AWS CodeCommit, etc."
-branding:
-  icon: "archive"
-  color: "blue"
+# branding:
+#   icon: "archive"
+#   color: "blue"
 inputs:
   ssh_private_key:
     description: "SSH private key for ssh connection to the target repository"
