@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:                                              # <-- must use actions/checkout@v1 before mirroring!
     - uses: actions/checkout@v1
+    #- uses: ./.github/workflows/my-action
     - uses: pixta-dev/repository-mirroring-action@v1
       with:
         target_repo_url:
