@@ -13,3 +13,5 @@ jobs:
           git@gitlab.com:arthurkazaryants/deployment.git
         ssh_private_key:
           ${{ secrets.GITLAB_SSH_PRIVATE_KEY }}
+        source_branch:
+          master
